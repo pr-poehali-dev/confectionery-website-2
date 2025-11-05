@@ -24,30 +24,30 @@ export default function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   const products: Product[] = [
-    { id: 1, name: 'Силиконовая форма "Роза"', price: 450, category: 'Формы', image: '🌹', description: 'Профессиональная форма для мастики' },
-    { id: 2, name: 'Гель-краситель красный', price: 280, category: 'Красители', image: '🎨', description: 'Концентрированный пищевой краситель' },
-    { id: 3, name: 'Кондитерский мешок набор', price: 590, category: 'Инструменты', image: '🎂', description: 'Набор из 12 насадок' },
-    { id: 4, name: 'Мастика сахарная белая 1кг', price: 380, category: 'Материалы', image: '⚪', description: 'Готовая к использованию' },
-    { id: 5, name: 'Форма "Бабочка" 3D', price: 520, category: 'Формы', image: '🦋', description: 'Объемная силиконовая форма' },
-    { id: 6, name: 'Набор красителей 8 цветов', price: 1250, category: 'Красители', image: '🌈', description: 'Профессиональная палитра' },
-    { id: 7, name: 'Вращающаяся подставка', price: 890, category: 'Инструменты', image: '🔄', description: 'Металлическая, диаметр 30см' },
-    { id: 8, name: 'Съедобные блестки золото', price: 340, category: 'Декор', image: '✨', description: 'Пищевые блестки 10г' },
-    { id: 9, name: 'Форма "Цветы ассорти"', price: 480, category: 'Формы', image: '🌸', description: 'Набор из 5 форм' },
-    { id: 10, name: 'Айсинг белый 500г', price: 420, category: 'Материалы', image: '🍰', description: 'Готовая глазурь' },
-    { id: 11, name: 'Кисти для росписи набор', price: 650, category: 'Инструменты', image: '🖌️', description: '6 кистей разных размеров' },
-    { id: 12, name: 'Съедобная бумага А4', price: 180, category: 'Декор', image: '📄', description: 'Упаковка 10 листов' },
-    { id: 13, name: 'Форма "Листья"', price: 390, category: 'Формы', image: '🍃', description: 'Реалистичная текстура' },
-    { id: 14, name: 'Краситель гелевый черный', price: 290, category: 'Красители', image: '⚫', description: 'Концентрат 20г' },
-    { id: 15, name: 'Скребок кондитерский', price: 220, category: 'Инструменты', image: '🔪', description: 'Металлический' },
-    { id: 16, name: 'Сахарные жемчужины микс', price: 320, category: 'Декор', image: '💎', description: 'Разные размеры 100г' },
-    { id: 17, name: 'Форма "Геометрия"', price: 560, category: 'Формы', image: '🔷', description: 'Современный дизайн' },
-    { id: 18, name: 'Ароматизатор ваниль', price: 250, category: 'Материалы', image: '🌿', description: 'Натуральный экстракт' },
-    { id: 19, name: 'Помадка кондитерская', price: 380, category: 'Материалы', image: '🍬', description: 'Белая 500г' },
-    { id: 20, name: 'Трафарет узоры набор', price: 450, category: 'Инструменты', image: '📐', description: '10 различных узоров' },
-    { id: 21, name: 'Перламутр пищевой', price: 360, category: 'Декор', image: '🌟', description: 'Золотой и серебряный' },
-    { id: 22, name: 'Мат текстурный кружево', price: 580, category: 'Инструменты', image: '🕸️', description: 'Силиконовый коврик' },
-    { id: 23, name: 'Форма "Сердца"', price: 420, category: 'Формы', image: '❤️', description: 'Набор 3 размера' },
-    { id: 24, name: 'Кандурин радуга', price: 490, category: 'Декор', image: '🌈', description: 'Переливающийся краситель' },
+    { id: 1, name: 'Силиконовая форма "Роза"', price: 450, category: 'Формы', image: 'Flower', description: 'Профессиональная форма для мастики' },
+    { id: 2, name: 'Гель-краситель красный', price: 280, category: 'Красители', image: 'Palette', description: 'Концентрированный пищевой краситель' },
+    { id: 3, name: 'Кондитерский мешок набор', price: 590, category: 'Инструменты', image: 'Cake', description: 'Набор из 12 насадок' },
+    { id: 4, name: 'Мастика сахарная белая 1кг', price: 380, category: 'Материалы', image: 'Package', description: 'Готовая к использованию' },
+    { id: 5, name: 'Форма "Бабочка" 3D', price: 520, category: 'Формы', image: 'Bug', description: 'Объемная силиконовая форма' },
+    { id: 6, name: 'Набор красителей 8 цветов', price: 1250, category: 'Красители', image: 'Paintbrush', description: 'Профессиональная палитра' },
+    { id: 7, name: 'Вращающаяся подставка', price: 890, category: 'Инструменты', image: 'RotateCw', description: 'Металлическая, диаметр 30см' },
+    { id: 8, name: 'Съедобные блестки золото', price: 340, category: 'Декор', image: 'Sparkles', description: 'Пищевые блестки 10г' },
+    { id: 9, name: 'Форма "Цветы ассорти"', price: 480, category: 'Формы', image: 'Cherry', description: 'Набор из 5 форм' },
+    { id: 10, name: 'Айсинг белый 500г', price: 420, category: 'Материалы', image: 'IceCream', description: 'Готовая глазурь' },
+    { id: 11, name: 'Кисти для росписи набор', price: 650, category: 'Инструменты', image: 'Brush', description: '6 кистей разных размеров' },
+    { id: 12, name: 'Съедобная бумага А4', price: 180, category: 'Декор', image: 'FileText', description: 'Упаковка 10 листов' },
+    { id: 13, name: 'Форма "Листья"', price: 390, category: 'Формы', image: 'Leaf', description: 'Реалистичная текстура' },
+    { id: 14, name: 'Краситель гелевый черный', price: 290, category: 'Красители', image: 'Droplet', description: 'Концентрат 20г' },
+    { id: 15, name: 'Скребок кондитерский', price: 220, category: 'Инструменты', image: 'Scissors', description: 'Металлический' },
+    { id: 16, name: 'Сахарные жемчужины микс', price: 320, category: 'Декор', image: 'Gem', description: 'Разные размеры 100г' },
+    { id: 17, name: 'Форма "Геометрия"', price: 560, category: 'Формы', image: 'Square', description: 'Современный дизайн' },
+    { id: 18, name: 'Ароматизатор ваниль', price: 250, category: 'Материалы', image: 'Sprout', description: 'Натуральный экстракт' },
+    { id: 19, name: 'Помадка кондитерская', price: 380, category: 'Материалы', image: 'Candy', description: 'Белая 500г' },
+    { id: 20, name: 'Трафарет узоры набор', price: 450, category: 'Инструменты', image: 'Ruler', description: '10 различных узоров' },
+    { id: 21, name: 'Перламутр пищевой', price: 360, category: 'Декор', image: 'Star', description: 'Золотой и серебряный' },
+    { id: 22, name: 'Мат текстурный кружево', price: 580, category: 'Инструменты', image: 'Grid', description: 'Силиконовый коврик' },
+    { id: 23, name: 'Форма "Сердца"', price: 420, category: 'Формы', image: 'Heart', description: 'Набор 3 размера' },
+    { id: 24, name: 'Кандурин радуга', price: 490, category: 'Декор', image: 'Rainbow', description: 'Переливающийся краситель' },
   ];
 
   const categories = ['Все товары', 'Формы', 'Красители', 'Инструменты', 'Материалы', 'Декор'];
@@ -94,7 +94,7 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveSection('home')}>
-              <div className="text-3xl">🧁</div>
+              <Icon name="Cake" size={32} className="text-primary" />
               <h1 className="text-2xl font-bold text-primary">СладкийМир</h1>
             </div>
             
@@ -138,7 +138,9 @@ export default function Index() {
                     <>
                       {cart.map(item => (
                         <div key={item.id} className="flex gap-4">
-                          <div className="text-4xl">{item.image}</div>
+                          <div className="w-12 h-12 bg-gradient-to-br from-pink-100 to-purple-100 rounded-lg flex items-center justify-center">
+                            <Icon name={item.image} size={24} className="text-primary" />
+                          </div>
                           <div className="flex-1">
                             <h4 className="font-medium">{item.name}</h4>
                             <p className="text-sm text-gray-600">{item.price} ₽</p>
@@ -174,7 +176,7 @@ export default function Index() {
                         <span>Итого:</span>
                         <span>{cartTotal} ₽</span>
                       </div>
-                      <Button className="w-full" size="lg">
+                      <Button className="w-full btn-gradient text-white" size="lg">
                         Оформить заказ
                       </Button>
                     </>
@@ -194,7 +196,7 @@ export default function Index() {
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Профессиональные инструменты и материалы для создания кондитерских шедевров
               </p>
-              <Button size="lg" onClick={() => setActiveSection('catalog')}>
+              <Button size="lg" className="btn-gradient text-white" onClick={() => setActiveSection('catalog')}>
                 Перейти в каталог
                 <Icon name="ArrowRight" size={20} className="ml-2" />
               </Button>
@@ -213,11 +215,11 @@ export default function Index() {
                     }}
                   >
                     <CardContent className="p-6 text-center">
-                      <div className="text-5xl mb-3">
-                        {cat === 'Формы' && '🌹'}
-                        {cat === 'Красители' && '🎨'}
-                        {cat === 'Инструменты' && '🎂'}
-                        {cat === 'Декор' && '✨'}
+                      <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center">
+                        {cat === 'Формы' && <Icon name="Flower" size={32} className="text-primary" />}
+                        {cat === 'Красители' && <Icon name="Palette" size={32} className="text-primary" />}
+                        {cat === 'Инструменты' && <Icon name="Cake" size={32} className="text-primary" />}
+                        {cat === 'Декор' && <Icon name="Sparkles" size={32} className="text-primary" />}
                       </div>
                       <h4 className="font-semibold">{cat}</h4>
                     </CardContent>
@@ -232,7 +234,9 @@ export default function Index() {
                 {products.slice(0, 8).map(product => (
                   <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
                     <CardContent className="p-4">
-                      <div className="text-6xl mb-4 text-center">{product.image}</div>
+                      <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center">
+                        <Icon name={product.image} size={40} className="text-primary" />
+                      </div>
                       <Badge className="mb-2">{product.category}</Badge>
                       <h4 className="font-semibold mb-2">{product.name}</h4>
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>
@@ -270,7 +274,9 @@ export default function Index() {
               {filteredProducts.map(product => (
                 <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
                   <CardContent className="p-4">
-                    <div className="text-6xl mb-4 text-center">{product.image}</div>
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center">
+                      <Icon name={product.image} size={40} className="text-primary" />
+                    </div>
                     <Badge className="mb-2">{product.category}</Badge>
                     <h4 className="font-semibold mb-2">{product.name}</h4>
                     <p className="text-sm text-gray-600 mb-3">{product.description}</p>

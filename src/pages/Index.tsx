@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Separator } from '@/components/ui/separator';
 import Icon from '@/components/ui/icon';
 
@@ -22,6 +23,7 @@ interface CartItem extends Product {
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const products: Product[] = [
     { id: 1, name: 'Силиконовая форма "Роза"', price: 450, category: 'Формы', image: 'Flower', description: 'Профессиональная форма для мастики' },
@@ -270,7 +272,11 @@ export default function Index() {
               <h3 className="text-3xl font-bold mb-6">Популярные товары</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.slice(0, 8).map(product => (
-                  <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
+                  <Card 
+                    key={product.id} 
+                    className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200 cursor-pointer"
+                    onClick={() => setSelectedProduct(product)}
+                  >
                     <CardContent className="p-4">
                       <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center">
                         <Icon name={product.image} size={40} className="text-primary" />
@@ -280,7 +286,13 @@ export default function Index() {
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-lg font-bold">{product.price} ₽</span>
-                        <Button size="sm" onClick={() => addToCart(product)}>
+                        <Button 
+                          size="sm" 
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            addToCart(product);
+                          }}
+                        >
                           <Icon name="ShoppingCart" size={16} />
                         </Button>
                       </div>
@@ -310,7 +322,11 @@ export default function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredProducts.map(product => (
-                <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
+                <Card 
+                  key={product.id} 
+                  className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200 cursor-pointer"
+                  onClick={() => setSelectedProduct(product)}
+                >
                   <CardContent className="p-4">
                     <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl flex items-center justify-center">
                       <Icon name={product.image} size={40} className="text-primary" />
@@ -321,7 +337,12 @@ export default function Index() {
                   </CardContent>
                   <CardFooter className="p-4 pt-0 flex items-center justify-between">
                     <span className="text-lg font-bold">{product.price} ₽</span>
-                    <Button onClick={() => addToCart(product)}>
+                    <Button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        addToCart(product);
+                      }}
+                    >
                       <Icon name="ShoppingCart" size={16} className="mr-2" />
                       В корзину
                     </Button>
@@ -534,6 +555,77 @@ export default function Index() {
           </div>
         )}
       </main>
+
+      <Dialog open={!!selectedProduct} onOpenChange={(open) => !open && setSelectedProduct(null)}>
+        <DialogContent className="max-w-2xl">
+          {selectedProduct && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl">{selectedProduct.name}</DialogTitle>
+                <DialogDescription>
+                  <Badge className="mt-2">{selectedProduct.category}</Badge>
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div className="flex items-center justify-center">
+                  <div className="w-32 h-32 bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl flex items-center justify-center">
+                    <Icon name={selectedProduct.image} size={64} className="text-primary" />
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Описание</h4>
+                    <p className="text-gray-700">{selectedProduct.description}</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-r from-pink-50 to-purple-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2">Характеристики</h4>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                      <li className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-primary" />
+                        Профессиональное качество
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-primary" />
+                        Сертифицировано для пищевого использования
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-primary" />
+                        Гарантия качества 1 год
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Icon name="Check" size={16} className="text-primary" />
+                        Быстрая доставка по всей России
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <Separator />
+                  
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-600 mb-1">Цена</p>
+                      <p className="text-3xl font-bold text-primary">{selectedProduct.price} ₽</p>
+                    </div>
+                    <Button 
+                      size="lg" 
+                      className="btn-gradient text-white"
+                      onClick={() => {
+                        addToCart(selectedProduct);
+                        setSelectedProduct(null);
+                      }}
+                    >
+                      <Icon name="ShoppingCart" size={20} className="mr-2" />
+                      В корзину
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <footer className="bg-gradient-to-br from-purple-100/50 to-pink-100/50 backdrop-blur border-t border-pink-200 mt-16">
         <div className="container mx-auto px-4 py-8">

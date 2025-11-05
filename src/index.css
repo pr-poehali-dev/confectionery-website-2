@@ -7,28 +7,28 @@
 @layer base {
   :root {
     --background: 300 20% 98%;
-    --foreground: 280 15% 25%;
+    --foreground: 25 40% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 280 15% 25%;
+    --card-foreground: 25 40% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 280 15% 25%;
+    --popover-foreground: 25 40% 25%;
 
     --primary: 330 65% 75%;
-    --primary-foreground: 280 15% 25%;
+    --primary-foreground: 25 40% 25%;
 
     --secondary: 200 35% 88%;
-    --secondary-foreground: 280 15% 25%;
+    --secondary-foreground: 25 40% 25%;
 
     --muted: 45 40% 92%;
-    --muted-foreground: 280 10% 45%;
+    --muted-foreground: 25 30% 45%;
 
     --accent: 270 50% 85%;
-    --accent-foreground: 280 15% 25%;
+    --accent-foreground: 25 40% 25%;
 
     --destructive: 0 65% 75%;
-    --destructive-foreground: 280 15% 25%;
+    --destructive-foreground: 25 40% 25%;
 
     --border: 300 15% 90%;
     --input: 300 15% 90%;
@@ -276,5 +276,30 @@
   .btn-gradient:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(232, 121, 249, 0.3);
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  .marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee:hover .marquee-content {
+    animation-play-state: paused;
   }
 }

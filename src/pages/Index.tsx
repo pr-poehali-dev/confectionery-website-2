@@ -90,6 +90,44 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 sparkle-bg">
+      <div className="bg-gradient-to-r from-pink-200 via-purple-200 to-pink-200 py-2 overflow-hidden">
+        <div className="marquee">
+          <div className="marquee-content">
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Sparkles" size={16} />
+              Скидка 15% на все формы до конца месяца
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Gift" size={16} />
+              Бесплатная доставка от 3000 ₽
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Star" size={16} />
+              Новинка: набор красителей "Радуга"
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Package" size={16} />
+              При заказе от 5000 ₽ - подарок
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Sparkles" size={16} />
+              Скидка 15% на все формы до конца месяца
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Gift" size={16} />
+              Бесплатная доставка от 3000 ₽
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Star" size={16} />
+              Новинка: набор красителей "Радуга"
+            </span>
+            <span className="inline-flex items-center gap-2 mx-8 text-sm font-semibold">
+              <Icon name="Package" size={16} />
+              При заказе от 5000 ₽ - подарок
+            </span>
+          </div>
+        </div>
+      </div>
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-200 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">

@@ -89,8 +89,8 @@ export default function Index() {
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-white">
-      <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-200 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => setActiveSection('home')}>
@@ -206,7 +206,7 @@ export default function Index() {
                 {['Формы', 'Красители', 'Инструменты', 'Декор'].map(cat => (
                   <Card
                     key={cat}
-                    className="cursor-pointer hover:shadow-lg transition-all duration-200 hover:scale-105"
+                    className="cursor-pointer hover:shadow-xl transition-all duration-200 hover:scale-105 bg-gradient-to-br from-white to-pink-50/50 border-pink-200"
                     onClick={() => {
                       setSelectedCategory(cat);
                       setActiveSection('catalog');
@@ -230,7 +230,7 @@ export default function Index() {
               <h3 className="text-3xl font-bold mb-6">Популярные товары</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products.slice(0, 8).map(product => (
-                  <Card key={product.id} className="hover:shadow-lg transition-all duration-200 hover:scale-105">
+                  <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
                     <CardContent className="p-4">
                       <div className="text-6xl mb-4 text-center">{product.image}</div>
                       <Badge className="mb-2">{product.category}</Badge>
@@ -268,7 +268,7 @@ export default function Index() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filteredProducts.map(product => (
-                <Card key={product.id} className="hover:shadow-lg transition-all duration-200 hover:scale-105">
+                <Card key={product.id} className="hover:shadow-xl transition-all duration-200 hover:scale-105 bg-white/90 backdrop-blur border-purple-200">
                   <CardContent className="p-4">
                     <div className="text-6xl mb-4 text-center">{product.image}</div>
                     <Badge className="mb-2">{product.category}</Badge>
@@ -491,7 +491,7 @@ export default function Index() {
         )}
       </main>
 
-      <footer className="bg-gray-50 border-t mt-16">
+      <footer className="bg-gradient-to-br from-purple-100/50 to-pink-100/50 backdrop-blur border-t border-pink-200 mt-16">
         <div className="container mx-auto px-4 py-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
